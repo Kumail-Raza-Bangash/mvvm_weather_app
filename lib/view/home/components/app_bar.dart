@@ -11,33 +11,29 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.all(Dimensions.radius15/2),
-          child: const Icon(
+          padding: EdgeInsets.all(Dimensions.radius15 / 2),
+          child: Icon(
             Icons.menu,
-            color: Colors.white,
+            color: Colors.white.withOpacity(.6),
           ),
         ),
         SizedBox(width: Dimensions.width10),
-
         Padding(
-          padding: EdgeInsets.all(Dimensions.radius15/2),
-          child: const Icon(
+          padding: EdgeInsets.all(Dimensions.radius15 / 2),
+          child: Icon(
             Icons.notifications_none_rounded,
-            color: Colors.white,
+            color: Colors.white.withOpacity(.6),
           ),
         ),
-
         const Spacer(),
-
         Padding(
-          padding: EdgeInsets.all(Dimensions.radius15/2),
+          padding: EdgeInsets.all(Dimensions.radius15 / 2),
           child: Image.asset(
             ImageAssets.nightRain,
             height: Dimensions.height45,
             width: Dimensions.width45,
           ),
-        ),  
-
+        ),
       ],
     );
   }

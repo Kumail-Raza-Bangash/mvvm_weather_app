@@ -1,3 +1,6 @@
+
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:mvvm_weather_app/resourses/color/colors.dart';
 import 'package:mvvm_weather_app/resourses/images/image_assets.dart';
@@ -11,13 +14,34 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMixin{
 
-  @override
+  late Animation<double> animation;
+  late AnimationController controller;
+
+    @override
   void initState() {
+    // TODO: implement initState
     super.initState();
-    SplashServices.getApiData();
+
+    controller = AnimationController(
+      vsync: this, 
+      duration: const Duration(seconds: 4))..forward();
+    
+    animation = CurvedAnimation(
+      parent: controller, 
+      curve: Curves.linear);
+
+      Timer(
+      const Duration(seconds: 5),
+      () {
+        SplashServices.getApiData();
+      });
+
+      
+
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +50,14 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Center(
-          child: Image.asset(
-            ImageAssets.nightStarRain,
-            height: Dimensions.height20*10,
-            width: Dimensions.width20*10,
+          child: ScaleTransition(
+            scale: animation,
+            child: Center(
+              child: Image.asset(
+                ImageAssets.nightStarRain,
+                width: Dimensions.splashImg,
+              ),
+            ),
           ),
         ),
       ),

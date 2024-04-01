@@ -6,7 +6,7 @@ class AppColors {
       gradient: LinearGradient(
         colors: [
           Colors.white60,
-          Colors.greenAccent,
+          Colors.green,
         ],
         begin: Alignment.centerLeft,
         end: Alignment.centerRight,
