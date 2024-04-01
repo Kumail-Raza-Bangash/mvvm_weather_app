@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mvvm_weather_app/view/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,12 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'MVVM Weather App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  Scaffold(),
+      home: const SplashScreen(),
     );
   }
 }
