@@ -8,5 +8,5 @@ class ImageAssets {
   static const heavyRain = 'assets/images/heavyRain.png';
   static const wind = 'assets/images/wind.png';
   static const sun = 'assets/images/sun.png';
-  static const windWave = 'assets/images/windvave.png';
+  static const windWave = 'assets/images/windwave.png';
 }

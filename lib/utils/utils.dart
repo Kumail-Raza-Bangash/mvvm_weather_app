@@ -40,7 +40,7 @@ class Utils {
     return timeIn12HourFormat; //3:30 PM
   }
 
-  static String currentTime(String time)
+  static String currentTime(DateTime time)
   {
     DateFormat dateFormat = DateFormat('hh:mm a');
     DateTime now = DateTime.now();
