@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvvm_weather_app/resourses/color/colors.dart';
 import 'package:mvvm_weather_app/utils/dimensions.dart';
+import 'package:mvvm_weather_app/view/next_days/components/bottom_list.dart';
 import 'package:mvvm_weather_app/view/next_days/components/days_app_bar.dart';
 import 'package:mvvm_weather_app/view/next_days/components/days_list.dart';
 import 'package:mvvm_weather_app/view_model/controllers/days_controller.dart';
@@ -37,7 +38,22 @@ class NextDays extends StatelessWidget {
                     ),
                     DaysList(),
                   ],
-                )
+                ),
+                Positioned(
+                  bottom: 1,
+                  child: Container(
+                    height: Dimensions.screenHieght / 2 + 40,
+                    width: Dimensions.screenWidth,
+                    decoration: BoxDecoration(
+                      color: Colors.white38,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(Dimensions.radius20 * 4),
+                        topLeft: Radius.circular(Dimensions.radius20 * 4),
+                      ),
+                    ),
+                  ),
+                ),
+                BottomList(),
               ],
             ),
           ),
