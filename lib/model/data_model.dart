@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this, unnecessary_new, prefer_collection_literals, unnecessary_question_mark
+
 class DataModel {
   dynamic queryCost;
   dynamic latitude;

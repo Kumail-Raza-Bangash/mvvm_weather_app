@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mvvm_weather_app/resourses/images/image_assets.dart';
 import 'package:mvvm_weather_app/utils/dimensions.dart';
