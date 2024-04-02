@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mvvm_weather_app/resourses/color/colors.dart';
 import 'package:mvvm_weather_app/utils/dimensions.dart';
 import 'package:mvvm_weather_app/view/next_days/components/bottom_list.dart';
+import 'package:mvvm_weather_app/view/next_days/components/center_card.dart';
 import 'package:mvvm_weather_app/view/next_days/components/days_app_bar.dart';
 import 'package:mvvm_weather_app/view/next_days/components/days_list.dart';
 import 'package:mvvm_weather_app/view_model/controllers/days_controller.dart';
@@ -54,6 +55,13 @@ class NextDays extends StatelessWidget {
                   ),
                 ),
                 BottomList(),
+                Hero(
+                  tag: 'TAG',
+                  child: Material(
+                    color: Colors.transparent,
+                    child: CenterCard(),
+                  ),
+                ),
               ],
             ),
           ),
