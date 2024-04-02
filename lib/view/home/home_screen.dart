@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const Spacer(),
                     GestureDetector(
-                      onTap: () => Get.to(() => const NextDays()),
+                      onTap: () => Get.to(() => NextDays()),
                       child: Text(
                         'Next 14 Days >',
                         style: TextStyle(
