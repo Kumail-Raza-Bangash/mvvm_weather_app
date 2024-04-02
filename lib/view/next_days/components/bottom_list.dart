@@ -15,7 +15,7 @@ class BottomList extends StatelessWidget {
     return Positioned(
       bottom: 1,
       child: SizedBox(
-        height: Dimensions.screenHieght / 2,
+        height: Dimensions.screenHieght / 5,
         width: Dimensions.screenWidth,
         child: ListView.builder(
           itemCount: homeController.model.value!.days!.length,

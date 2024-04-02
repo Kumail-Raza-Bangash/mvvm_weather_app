@@ -43,7 +43,7 @@ class NextDays extends StatelessWidget {
                 Positioned(
                   bottom: 1,
                   child: Container(
-                    height: Dimensions.screenHieght / 2 + 40,
+                    height: Dimensions.screenHieght / 4,
                     width: Dimensions.screenWidth,
                     decoration: BoxDecoration(
                       color: Colors.white38,

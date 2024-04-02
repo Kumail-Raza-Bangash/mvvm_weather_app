@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mvvm_weather_app/resourses/images/image_assets.dart';
 import 'package:mvvm_weather_app/utils/dimensions.dart';
+import 'package:mvvm_weather_app/utils/utils.dart';
+import 'package:mvvm_weather_app/view/next_days/components/small_container_list.dart';
 import 'package:mvvm_weather_app/view_model/controllers/days_controller.dart';
 import 'package:mvvm_weather_app/view_model/controllers/home_controller.dart';
 
@@ -13,13 +16,13 @@ class CenterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Dimensions.height45*10,
+      height: Dimensions.height45 * 10,
       width: Dimensions.screenWidth,
       margin: EdgeInsets.only(top: Dimensions.height20 * 4),
       child: Stack(
         children: [
           Positioned(
-            bottom: Dimensions.height10 * 5,
+            bottom: Dimensions.height10 * 8,
             left: Dimensions.width30,
             right: Dimensions.width30,
             child: Container(
@@ -72,10 +75,99 @@ class CenterCard extends StatelessWidget {
                               ),
                             ),
                           ),
+                          Obx(
+                            () => Text(
+                              'Feel like ${daysController.day.value.feelslike}',
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(.6),
+                                height: 0,
+                                fontSize: Dimensions.font20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                  )
+                  ),
+
+                  //
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: Dimensions.width30),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Spacer(),
+                          Obx(
+                            () => Text(
+                              '${daysController.day.value.conditions}',
+                              style: TextStyle(
+                                color: Colors.white,
+                                height: 0,
+                                fontSize: Dimensions.font20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: Dimensions.height10 / 2,
+                          ),
+                          Text(
+                            Utils.currentTime(DateTime.now()),
+                            style: TextStyle(
+                              color: Colors.white.withOpacity(.6),
+                              height: 0,
+                              fontSize: Dimensions.font16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const Spacer(),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  //
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: ShaderMask(
+                        shaderCallback: (Rect bounds) {
+                          return LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Colors.white,
+                              Colors.white.withOpacity(.5)
+                            ],
+                          ).createShader(bounds);
+                        },
+                        child: Image.asset(
+                          ImageAssets.windWave,
+                          height: Dimensions.height10 * 12,
+                          width: Dimensions.width20 * 10,
+                          fit: BoxFit.fill,
+                        ),),
+                  ),
+
+                  //
+                  Positioned(
+                    bottom: Dimensions.height30,
+                    child: SizedBox(
+                      width: Dimensions.screenWidth - 60,
+                      child: SmallContainerList(),
+                    ),
+                  ),
+                  Positioned(
+                    left: Dimensions.width10,
+                    child: Obx(() => Image.asset(
+                      daysController.getImage(daysController.currentDay.value),
+                      height: Dimensions.height20*8,
+                      width: Dimensions.width20*8,
+                    ))
+                  ),
+
                 ],
               ),
             ),
