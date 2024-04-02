@@ -47,7 +47,7 @@ class DaysController extends GetxController {
 
   String getMinTemp(int index)
   {
-    return "${homeController.model.value!.days![index].tempmin!.toInt().toString()}\u0080";
+    return "${homeController.model.value!.days![index].tempmin!.toInt().toString()}\u00B0";
   }
 
   String getMaxTemp(int index)

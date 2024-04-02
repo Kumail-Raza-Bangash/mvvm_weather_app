@@ -24,7 +24,7 @@ class HomeController extends GetxController {
       : Utils()
           .imageMap[model.value!.days![0].hours![index].conditions.toString()]!;
   
-  String getAddress() => '${model.value!.address.toString()}, \n${model.value!.timezone.toString()}';
+  String getAddress() => '${model.value!.resolvedAddress.toString()}, \n${model.value!.timezone.toString()}';
   String getCondition() => hours.value!.conditions.toString(); 
   String getCurrentTemp() => hours.value!.temp!.toInt().toString();
   String getFeelLike() => hours.value!.feelslike.toString();

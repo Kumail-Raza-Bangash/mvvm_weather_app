@@ -23,24 +23,25 @@ class Location extends StatelessWidget {
               controller.getAddress(),
               style: TextStyle(
                 height: 0,
-                color: Colors.black.withOpacity(.6),
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: Dimensions.font26,
+                fontSize: Dimensions.font20,
               ),
             ),
             Text(
               Utils.formateDate(DateTime.now()),
               style: TextStyle(
-                color: Colors.white.withOpacity(.6),
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
+                fontSize: Dimensions.font16,
               ),
             ),
           ],
         ),
         const Spacer(),
         SizedBox(
-          height: Dimensions.height15 * 10,
-          width: Dimensions.width15 * 10,
+          height: Dimensions.height10 * 12,
+          width: Dimensions.width10 * 12,
           child: Padding(
             padding: EdgeInsets.all(Dimensions.radius20),
             child: ClipRRect(
