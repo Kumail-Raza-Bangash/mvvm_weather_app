@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mvvm_weather_app/resourses/color/colors.dart';
 import 'package:mvvm_weather_app/utils/dimensions.dart';
 import 'package:mvvm_weather_app/view/home/components/app_bar.dart';
+import 'package:mvvm_weather_app/view/home/components/container_list.dart';
 import 'package:mvvm_weather_app/view/home/components/info_card.dart';
 import 'package:mvvm_weather_app/view/home/components/location.dart';
 import 'package:mvvm_weather_app/view_model/controllers/home_controller.dart';
@@ -39,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: InfoCard(),
                   )
                 ),
+                ContainerList(),
               ],
             ),
           ),

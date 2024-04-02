@@ -78,8 +78,8 @@ class InfoCard extends StatelessWidget {
           ),
 
           Positioned(
-            top: Dimensions.height10*0,
-            right: Dimensions.width30,
+            top: Dimensions.height10,
+            right: Dimensions.width20,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -100,17 +100,18 @@ class InfoCard extends StatelessWidget {
                     height: 0,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: Dimensions.font20 * 5,
+                    fontSize: Dimensions.font20 * 4,
                   ),
                   ),),
                 ),
 
                 Obx(() => Text(
                     "Feel like ${controller.getFeelLike()}",
-                    style: const TextStyle(
+                    style: TextStyle(
                     height: 0,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
+                    fontSize: Dimensions.font20,
                   ),
                   ),),
               ],
