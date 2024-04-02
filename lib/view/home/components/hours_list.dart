@@ -11,7 +11,7 @@ class HoursList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Dimensions.height30 * 6,
+      height: Dimensions.height20 * 8,
       width: Dimensions.screenWidth,
       child: ListView.builder(
         itemCount: controller.model.value!.days![0].hours!.length,
@@ -36,7 +36,7 @@ class HoursList extends StatelessWidget {
                     ),
                     child: Obx(
                       () => Container(
-                        height: Dimensions.height20 * 6,
+                        height: Dimensions.height20 * 7,
                         width: Dimensions.width20 * 4,
                         padding:
                             EdgeInsets.symmetric(vertical: Dimensions.height10),
@@ -57,6 +57,7 @@ class HoursList extends StatelessWidget {
                                   color: controller.compareIndex(index)
                                       ? Colors.white
                                       : Colors.grey,
+                                    fontSize: Dimensions.font16,
                                 ),
                               ),
                             ),
@@ -70,11 +71,12 @@ class HoursList extends StatelessWidget {
                             Text(
                               '${controller.model.value!.days![0].hours![index].temp.toInt()}\u00B0',
                               style: TextStyle(
-                                  color: controller.compareIndex(index)
-                                      ? Colors.white
-                                      : Colors.grey,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: Dimensions.font20,),
+                                color: controller.compareIndex(index)
+                                    ? Colors.white
+                                    : Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                fontSize: Dimensions.font20,
+                              ),
                             ),
                           ],
                         ),
