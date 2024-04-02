@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:mvvm_weather_app/resourses/color/colors.dart';
 import 'package:mvvm_weather_app/utils/dimensions.dart';
@@ -38,12 +37,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Location(),
                 SizedBox(height: Dimensions.height15),
                 Hero(
-                  tag: 'Tag', 
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InfoCard(),
-                  )
-                ),
+                    tag: 'Tag',
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InfoCard(),
+                    )),
                 ContainerList(),
                 SizedBox(height: Dimensions.height45),
                 Row(
