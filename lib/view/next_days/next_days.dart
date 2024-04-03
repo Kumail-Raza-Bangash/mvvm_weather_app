@@ -57,9 +57,9 @@ class NextDays extends StatelessWidget {
                         topLeft: Radius.circular(Dimensions.radius20 * 3),
                       ),
                     ),
-                    child: BottomList(),
                   ),
                 ),
+                BottomList(),
                 Hero(
                   tag: 'TAG',
                   child: Material(
