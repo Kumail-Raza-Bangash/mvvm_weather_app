@@ -32,7 +32,7 @@ class BottomList extends StatelessWidget {
                 borderRadius: BorderRadius.circular(Dimensions.radius30),
               ),
               child: Container(
-                height: Dimensions.height20 * 5,
+                height: Dimensions.height20 * 4,
                 width: Dimensions.screenWidth,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(Dimensions.radius30),
