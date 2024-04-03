@@ -16,13 +16,14 @@ class CenterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Dimensions.height45 * 10,
+      height: Dimensions.height45 * 9,
       width: Dimensions.screenWidth,
-      margin: EdgeInsets.only(top: Dimensions.height20 * 4),
+      margin: EdgeInsets.only(top: Dimensions.height10 / 2),
       child: Stack(
         children: [
           Positioned(
-            bottom: Dimensions.height10 * 8,
+            top: Dimensions.height10,
+            bottom: Dimensions.height10,
             left: Dimensions.width30,
             right: Dimensions.width30,
             child: Container(
@@ -133,22 +134,20 @@ class CenterCard extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: ShaderMask(
-                        shaderCallback: (Rect bounds) {
-                          return LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Colors.white,
-                              Colors.white.withOpacity(.5)
-                            ],
-                          ).createShader(bounds);
-                        },
-                        child: Image.asset(
-                          ImageAssets.windWave,
-                          height: Dimensions.height10 * 12,
-                          width: Dimensions.width20 * 10,
-                          fit: BoxFit.fill,
-                        ),),
+                      shaderCallback: (Rect bounds) {
+                        return LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [Colors.white, Colors.white.withOpacity(.5)],
+                        ).createShader(bounds);
+                      },
+                      child: Image.asset(
+                        ImageAssets.windWave,
+                        height: Dimensions.height10 * 12,
+                        width: Dimensions.width20 * 10,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
                   ),
 
                   //
@@ -161,13 +160,15 @@ class CenterCard extends StatelessWidget {
                   ),
                   Positioned(
                     left: Dimensions.width10,
-                    child: Obx(() => Image.asset(
-                      daysController.getImage(daysController.currentDay.value),
-                      height: Dimensions.height20*8,
-                      width: Dimensions.width20*8,
-                    ))
+                    child: Obx(
+                      () => Image.asset(
+                        daysController
+                            .getImage(daysController.currentDay.value),
+                        height: Dimensions.height20 * 8,
+                        width: Dimensions.width20 * 8,
+                      ),
+                    ),
                   ),
-
                 ],
               ),
             ),

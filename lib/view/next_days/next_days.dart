@@ -45,16 +45,21 @@ class NextDays extends StatelessWidget {
                   child: Container(
                     height: Dimensions.screenHieght / 4,
                     width: Dimensions.screenWidth,
+                    padding: EdgeInsets.only(
+                      top: Dimensions.height20,
+                      left: Dimensions.width10 / 2,
+                      right: Dimensions.width10 / 2,
+                    ),
                     decoration: BoxDecoration(
                       color: Colors.white38,
                       borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(Dimensions.radius20 * 4),
-                        topLeft: Radius.circular(Dimensions.radius20 * 4),
+                        topRight: Radius.circular(Dimensions.radius20 * 3),
+                        topLeft: Radius.circular(Dimensions.radius20 * 3),
                       ),
                     ),
+                    child: BottomList(),
                   ),
                 ),
-                BottomList(),
                 Hero(
                   tag: 'TAG',
                   child: Material(

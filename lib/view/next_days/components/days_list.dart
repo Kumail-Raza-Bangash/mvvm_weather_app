@@ -11,7 +11,7 @@ class DaysList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: Dimensions.height20 * 7,
+      height: Dimensions.height20 * 6.5,
       width: Dimensions.screenWidth,
       padding: EdgeInsets.only(
         left: Dimensions.width10,
